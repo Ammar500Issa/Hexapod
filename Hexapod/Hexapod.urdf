@@ -1,0 +1,2045 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Hexapod">
+  <link
+    name="Hexapod_Body">
+    <inertial>
+      <origin
+        xyz="0.000467300641731394 0.000480640804340723 -0.0222927088725361"
+        rpy="0 0 0" />
+      <mass
+        value="0.252991709249718" />
+      <inertia
+        ixx="0.0003353228755392"
+        ixy="-3.5624522231311E-06"
+        ixz="9.13929498933835E-22"
+        iyy="0.000331209310039199"
+        iyz="-2.06880232664108E-21"
+        izz="0.000662153479951832" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Hexapod_Body.STL" />
+      </geometry>
+      <material
+        name="a">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Hexapod_Body.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Leg_One_Motor_One">
+    <inertial>
+      <origin
+        xyz="0.000584019854882684 0.0171270760121718 8.74251500962431E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0507410999571037" />
+      <inertia
+        ixx="8.72453812867062E-06"
+        ixy="2.91404732674268E-07"
+        ixz="4.76442069400232E-09"
+        iyy="1.36174955983004E-05"
+        iyz="4.99976360499878E-10"
+        izz="1.50547493857864E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_One_Motor_One.STL" />
+      </geometry>
+      <material
+        name="b">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_One_Motor_One.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Body_Motor_One"
+    type="fixed">
+    <origin
+      xyz="0.0430999999999997 0.0748245948869756 -0.035"
+      rpy="1.5707963267949 0 -2.09439510239319" />
+    <parent
+      link="Hexapod_Body" />
+    <child
+      link="Leg_One_Motor_One" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Leg_One_Joint_One">
+    <inertial>
+      <origin
+        xyz="-0.021 -0.0275000000000001 -2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0389043786122597" />
+      <inertia
+        ixx="7.22067461734331E-06"
+        ixy="-8.39372041984293E-23"
+        ixz="-7.02883961008259E-22"
+        iyy="6.08873929472342E-06"
+        iyz="-1.69032215963396E-22"
+        izz="7.22067461734331E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_One_Joint_One.STL" />
+      </geometry>
+      <material
+        name="c">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_One_Joint_One.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor_One_Joint_One"
+    type="revolute">
+    <origin
+      xyz="-0.0135 0.037 0"
+      rpy="3.14159265358979 0 1.5707963267949" />
+    <parent
+      link="Leg_One_Motor_One" />
+    <child
+      link="Leg_One_Joint_One" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.87"
+      upper="0.87"
+      effort="1.5"
+      velocity="6" />
+  </joint>
+  <link
+    name="Leg_One_Motor_Two">
+    <inertial>
+      <origin
+        xyz="0.0140840198548827 -0.0198729239878282 8.74251500962431E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0507410999571037" />
+      <inertia
+        ixx="8.7245381286706E-06"
+        ixy="2.91404732674267E-07"
+        ixz="4.76442069400002E-09"
+        iyy="1.36174955983004E-05"
+        iyz="4.99976360499654E-10"
+        izz="1.50547493857864E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_One_Motor_Two.STL" />
+      </geometry>
+      <material
+        name="d">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_One_Motor_Two.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_One_Motor_One"
+    type="revolute">
+    <origin
+      xyz="-0.021 -0.055 -0.021"
+      rpy="-1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="Leg_One_Joint_One" />
+    <child
+      link="Leg_One_Motor_Two" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.75"
+      upper="1.75"
+      effort="1.5"
+      velocity="6" />
+  </joint>
+  <link
+    name="Leg_One_Joint_Two">
+    <inertial>
+      <origin
+        xyz="-0.0252678246613521 -0.00384428347669541 -3.60822483003176E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.0208734115397715" />
+      <inertia
+        ixx="4.66379780614639E-06"
+        ixy="-3.86041295515387E-22"
+        ixz="-4.72913102230163E-23"
+        iyy="1.08843805914059E-06"
+        iyz="-1.67313754143348E-22"
+        izz="3.74567124038541E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_One_Joint_Two.STL" />
+      </geometry>
+      <material
+        name="e">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_One_Joint_Two.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor_Two_Joint_One"
+    type="fixed">
+    <origin
+      xyz="0.0505 -0.042 0"
+      rpy="3.14159265358979 0 -1.5707963267949" />
+    <parent
+      link="Leg_One_Motor_Two" />
+    <child
+      link="Leg_One_Joint_Two" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Leg_One_Motor_Three">
+    <inertial>
+      <origin
+        xyz="0.0140840198548827 -0.0198729239878282 8.74251500965206E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0507410999571036" />
+      <inertia
+        ixx="8.72453812867059E-06"
+        ixy="2.91404732674268E-07"
+        ixz="4.76442069399796E-09"
+        iyy="1.36174955983004E-05"
+        iyz="4.99976360499304E-10"
+        izz="1.50547493857863E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_One_Motor_Three.STL" />
+      </geometry>
+      <material
+        name="f">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_One_Motor_Three.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_Two_Motor_One"
+    type="revolute">
+    <origin
+      xyz="0 -0.0175 0"
+      rpy="0 0 -1.5707963267949" />
+    <parent
+      link="Leg_One_Joint_Two" />
+    <child
+      link="Leg_One_Motor_Three" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.2"
+      upper="1.75"
+      effort="1.5"
+      velocity="6" />
+  </joint>
+  <link
+    name="Leg_One_Foot">
+    <inertial>
+      <origin
+        xyz="7.01124950652221E-05 -0.0388270396002833 0.00702654358929466"
+        rpy="0 0 0" />
+      <mass
+        value="0.0294537667841514" />
+      <inertia
+        ixx="2.35841025364992E-05"
+        ixy="-3.24513193999939E-21"
+        ixz="-4.96335868122319E-08"
+        iyy="6.39638877905909E-06"
+        iyz="8.96077570377951E-06"
+        izz="2.04496277534295E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_One_Foot.STL" />
+      </geometry>
+      <material
+        name="g">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_One_Foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor_Three_Foot_One"
+    type="fixed">
+    <origin
+      xyz="0.0415 -0.021 -0.0125"
+      rpy="-1.5708 0 1.5708" />
+    <parent
+      link="Leg_One_Motor_Three" />
+    <child
+      link="Leg_One_Foot" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Leg_Two_Motor_One">
+    <inertial>
+      <origin
+        xyz="0.000584019854882684 0.0171270760121718 8.74251500965206E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0507410999571037" />
+      <inertia
+        ixx="8.72453812867061E-06"
+        ixy="2.91404732674266E-07"
+        ixz="4.76442069400188E-09"
+        iyy="1.36174955983004E-05"
+        iyz="4.9997636050019E-10"
+        izz="1.50547493857864E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Two_Motor_One.STL" />
+      </geometry>
+      <material
+        name="b">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Two_Motor_One.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Body_Motor_Two"
+    type="fixed">
+    <origin
+      xyz="0.08625 8.66025403784415E-05 -0.035"
+      rpy="1.5707963267949 0 3.14159265358979" />
+    <parent
+      link="Hexapod_Body" />
+    <child
+      link="Leg_Two_Motor_One" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Leg_Two_Joint_One">
+    <inertial>
+      <origin
+        xyz="-0.021 -0.0275 1.38777878078145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0389043786122597" />
+      <inertia
+        ixx="7.2206746173433E-06"
+        ixy="-1.02503950253765E-21"
+        ixz="3.59151891736246E-22"
+        iyy="6.08873929472342E-06"
+        iyz="-1.05879118406788E-21"
+        izz="7.2206746173433E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Two_Joint_One.STL" />
+      </geometry>
+      <material
+        name="c">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Two_Joint_One.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor_One_Joint_Two"
+    type="revolute">
+    <origin
+      xyz="-0.0135 0.037 0"
+      rpy="3.14159265358979 0 1.5707963267949" />
+    <parent
+      link="Leg_Two_Motor_One" />
+    <child
+      link="Leg_Two_Joint_One" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.87"
+      upper="0.87"
+      effort="1.5"
+      velocity="6" />
+  </joint>
+  <link
+    name="Leg_Two_Motor_Two">
+    <inertial>
+      <origin
+        xyz="0.0140840198548827 -0.0198729239878281 8.74251500963819E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0507410999571037" />
+      <inertia
+        ixx="8.7245381286706E-06"
+        ixy="2.91404732674251E-07"
+        ixz="4.76442069400182E-09"
+        iyy="1.36174955983004E-05"
+        iyz="4.99976360499683E-10"
+        izz="1.50547493857863E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Two_Motor_Two.STL" />
+      </geometry>
+      <material
+        name="d">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Two_Motor_Two.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_One_Motor_Two"
+    type="revolute">
+    <origin
+      xyz="-0.021 -0.055 -0.021"
+      rpy="-1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="Leg_Two_Joint_One" />
+    <child
+      link="Leg_Two_Motor_Two" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.75"
+      upper="1.75"
+      effort="1.5"
+      velocity="6" />
+  </joint>
+  <link
+    name="Leg_Two_Joint_Two">
+    <inertial>
+      <origin
+        xyz="-0.016732175338648 0.00384428347669485 -2.1094237467878E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.0208734115397716" />
+      <inertia
+        ixx="4.66379780614641E-06"
+        ixy="-2.01170324972896E-21"
+        ixz="-8.93614464730896E-22"
+        iyy="1.0884380591406E-06"
+        iyz="1.28970696947256E-20"
+        izz="3.74567124038542E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Two_Joint_Two.STL" />
+      </geometry>
+      <material
+        name="e">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Two_Joint_Two.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor_Two_Joint_Two"
+    type="fixed">
+    <origin
+      xyz="0.0505000000000004 0 0"
+      rpy="-3.14159265358979 0 1.5707963267949" />
+    <parent
+      link="Leg_Two_Motor_Two" />
+    <child
+      link="Leg_Two_Joint_Two" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Leg_Two_Motor_Three">
+    <inertial>
+      <origin
+        xyz="0.0140840198548827 -0.0198729239878282 8.74251500963819E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0507410999571037" />
+      <inertia
+        ixx="8.72453812867061E-06"
+        ixy="2.91404732674272E-07"
+        ixz="4.7644206939968E-09"
+        iyy="1.36174955983004E-05"
+        iyz="4.9997636050038E-10"
+        izz="1.50547493857864E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Two_Motor_Three.STL" />
+      </geometry>
+      <material
+        name="f">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Two_Motor_Three.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_Two_Motor_Two"
+    type="revolute">
+    <origin
+      xyz="-0.0419999999999999 0.0174999999999996 0"
+      rpy="0 0 1.5707963267949" />
+    <parent
+      link="Leg_Two_Joint_Two" />
+    <child
+      link="Leg_Two_Motor_Three" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.2"
+      upper="1.75"
+      effort="1.5"
+      velocity="6" />
+  </joint>
+  <link
+    name="Leg_Two_Foot">
+    <inertial>
+      <origin
+        xyz="0.00557011249506531 -0.0148270396002834 0.00702654358929461"
+        rpy="0 0 0" />
+      <mass
+        value="0.0294537667841514" />
+      <inertia
+        ixx="2.35841025364993E-05"
+        ixy="2.37169225231204E-20"
+        ixz="-4.96335868122461E-08"
+        iyy="6.39638877905909E-06"
+        iyz="8.96077570377951E-06"
+        izz="2.04496277534295E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Two_Foot.STL" />
+      </geometry>
+      <material
+        name="g">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Two_Foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor_Three_Foot_Two"
+    type="fixed">
+    <origin
+      xyz="0.0415 -0.0265 0.0115"
+      rpy="-1.5708 0 1.5708" />
+    <parent
+      link="Leg_Two_Motor_Three" />
+    <child
+      link="Leg_Two_Foot" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Leg_Three_Motor_One">
+    <inertial>
+      <origin
+        xyz="0.000584019854882684 0.0171270760121718 8.74251500963819E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0507410999571037" />
+      <inertia
+        ixx="8.7245381286706E-06"
+        ixy="2.91404732674265E-07"
+        ixz="4.76442069399277E-09"
+        iyy="1.36174955983004E-05"
+        iyz="4.9997636050019E-10"
+        izz="1.50547493857863E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Three_Motor_One.STL" />
+      </geometry>
+      <material
+        name="b">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Three_Motor_One.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Body_Motor_Three"
+    type="fixed">
+    <origin
+      xyz="0.0430999999999998 -0.0746513898062187 -0.035"
+      rpy="1.5707963267949 0 2.09439510239319" />
+    <parent
+      link="Hexapod_Body" />
+    <child
+      link="Leg_Three_Motor_One" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Leg_Three_Joint_One">
+    <inertial>
+      <origin
+        xyz="-0.021 -0.0274999999999999 1.2490009027033E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.0389043786122597" />
+      <inertia
+        ixx="7.22067461734331E-06"
+        ixy="1.10828261625725E-21"
+        ixz="-4.62402341941E-22"
+        iyy="6.08873929472343E-06"
+        iyz="1.48230765769503E-21"
+        izz="7.22067461734331E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Three_Joint_One.STL" />
+      </geometry>
+      <material
+        name="c">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Three_Joint_One.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor_One_Joint_Three"
+    type="revolute">
+    <origin
+      xyz="-0.0135 0.037 0"
+      rpy="3.14159265358979 0 1.5707963267949" />
+    <parent
+      link="Leg_Three_Motor_One" />
+    <child
+      link="Leg_Three_Joint_One" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.87"
+      upper="0.87"
+      effort="1.5"
+      velocity="6" />
+  </joint>
+  <link
+    name="Leg_Three_Motor_Two">
+    <inertial>
+      <origin
+        xyz="0.0140840198548827 -0.0198729239878281 8.74251500965206E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0507410999571037" />
+      <inertia
+        ixx="8.72453812867062E-06"
+        ixy="2.91404732674259E-07"
+        ixz="4.76442069399944E-09"
+        iyy="1.36174955983004E-05"
+        iyz="4.99976360500253E-10"
+        izz="1.50547493857864E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Three_Motor_Two.STL" />
+      </geometry>
+      <material
+        name="d">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Three_Motor_Two.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_One_Motor_Three"
+    type="revolute">
+    <origin
+      xyz="-0.021 -0.055 -0.0209999999999999"
+      rpy="-1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="Leg_Three_Joint_One" />
+    <child
+      link="Leg_Three_Motor_Two" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.75"
+      upper="1.75"
+      effort="1.5"
+      velocity="6" />
+  </joint>
+  <link
+    name="Leg_Three_Joint_Two">
+    <inertial>
+      <origin
+        xyz="-0.0167321753386479 0.00384428347669552 1.38777878078145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0208734115397715" />
+      <inertia
+        ixx="4.66379780614638E-06"
+        ixy="4.12928561786471E-21"
+        ixz="3.19034291935014E-22"
+        iyy="1.08843805914059E-06"
+        iyz="-2.95519551277004E-21"
+        izz="3.7456712403854E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Three_Joint_Two.STL" />
+      </geometry>
+      <material
+        name="e">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Three_Joint_Two.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor_Two_Joint_Three"
+    type="fixed">
+    <origin
+      xyz="0.0505 0 0"
+      rpy="3.14159265358979 0 1.5707963267949" />
+    <parent
+      link="Leg_Three_Motor_Two" />
+    <child
+      link="Leg_Three_Joint_Two" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Leg_Three_Motor_Three">
+    <inertial>
+      <origin
+        xyz="0.0140840198548827 -0.0198729239878282 8.74251500962431E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0507410999571037" />
+      <inertia
+        ixx="8.7245381286706E-06"
+        ixy="2.91404732674273E-07"
+        ixz="4.76442069399899E-09"
+        iyy="1.36174955983004E-05"
+        iyz="4.99976360498285E-10"
+        izz="1.50547493857863E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Three_Motor_Three.STL" />
+      </geometry>
+      <material
+        name="f">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Three_Motor_Three.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_Two_Motor_Three"
+    type="revolute">
+    <origin
+      xyz="-0.042 0.0175000000000001 0"
+      rpy="0 0 1.5707963267949" />
+    <parent
+      link="Leg_Three_Joint_Two" />
+    <child
+      link="Leg_Three_Motor_Three" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.2"
+      upper="1.75"
+      effort="1.5"
+      velocity="6" />
+  </joint>
+  <link
+    name="Leg_Three_Foot">
+    <inertial>
+      <origin
+        xyz="7.0112E-05 0.038827 -0.0070265"
+        rpy="0 0 0" />
+      <mass
+        value="0.029454" />
+      <inertia
+        ixx="2.3584E-05"
+        ixy="-1.5247E-20"
+        ixz="4.9634E-08"
+        iyy="6.3964E-06"
+        iyz="8.9608E-06"
+        izz="2.045E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Three_Foot.STL" />
+      </geometry>
+      <material
+        name="g">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Three_Foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor_Three_Foot_Three"
+    type="fixed">
+    <origin
+      xyz="0.0415 -0.021 -0.0125"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="Leg_Three_Motor_Three" />
+    <child
+      link="Leg_Three_Foot" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Leg_Four_Motor_One">
+    <inertial>
+      <origin
+        xyz="0.000584019854882694 0.0171270760121718 8.74251500965206E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0507410999571037" />
+      <inertia
+        ixx="8.72453812867061E-06"
+        ixy="2.91404732674264E-07"
+        ixz="4.76442069399891E-09"
+        iyy="1.36174955983004E-05"
+        iyz="4.99976360500343E-10"
+        izz="1.50547493857864E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Four_Motor_One.STL" />
+      </geometry>
+      <material
+        name="b">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Four_Motor_One.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Body_Motor_Four"
+    type="fixed">
+    <origin
+      xyz="-0.0432 -0.074651 -0.035"
+      rpy="1.5708 0 1.0472" />
+    <parent
+      link="Hexapod_Body" />
+    <child
+      link="Leg_Four_Motor_One" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Leg_Four_Joint_One">
+    <inertial>
+      <origin
+        xyz="-0.021 -0.0275 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0389043786122597" />
+      <inertia
+        ixx="7.2206746173433E-06"
+        ixy="-4.67620538149658E-22"
+        ixz="-2.04987134371332E-22"
+        iyy="6.0887392947234E-06"
+        iyz="2.04671557842792E-22"
+        izz="7.2206746173433E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Four_Joint_One.STL" />
+      </geometry>
+      <material
+        name="c">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Four_Joint_One.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor_One_Joint_Four"
+    type="revolute">
+    <origin
+      xyz="-0.0135 0.037 0"
+      rpy="3.1416 0 1.5708" />
+    <parent
+      link="Leg_Four_Motor_One" />
+    <child
+      link="Leg_Four_Joint_One" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.87"
+      upper="0.87"
+      effort="1.5"
+      velocity="6" />
+  </joint>
+  <link
+    name="Leg_Four_Motor_Two">
+    <inertial>
+      <origin
+        xyz="0.0140840198548827 -0.0198729239878282 8.74251500965206E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0507410999571037" />
+      <inertia
+        ixx="8.72453812867061E-06"
+        ixy="2.91404732674264E-07"
+        ixz="4.76442069400053E-09"
+        iyy="1.36174955983004E-05"
+        iyz="4.9997636049962E-10"
+        izz="1.50547493857864E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Four_Motor_Two.STL" />
+      </geometry>
+      <material
+        name="d">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Four_Motor_Two.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_One_Motor_Four"
+    type="revolute">
+    <origin
+      xyz="-0.021 -0.055 -0.021"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="Leg_Four_Joint_One" />
+    <child
+      link="Leg_Four_Motor_Two" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.75"
+      upper="1.75"
+      effort="1.5"
+      velocity="6" />
+  </joint>
+  <link
+    name="Leg_Four_Joint_Two">
+    <inertial>
+      <origin
+        xyz="-0.0167321753386479 0.00384428347669546 -2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0208734115397715" />
+      <inertia
+        ixx="4.6637978061464E-06"
+        ixy="-1.13132493400947E-21"
+        ixz="-1.2362970713267E-22"
+        iyy="1.08843805914059E-06"
+        iyz="1.84112247516701E-21"
+        izz="3.74567124038541E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Four_Joint_Two.STL" />
+      </geometry>
+      <material
+        name="e">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Four_Joint_Two.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor_Two_Joint_Four"
+    type="fixed">
+    <origin
+      xyz="0.0505 0 0"
+      rpy="3.1416 0 1.5708" />
+    <parent
+      link="Leg_Four_Motor_Two" />
+    <child
+      link="Leg_Four_Joint_Two" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Leg_Four_Motor_Three">
+    <inertial>
+      <origin
+        xyz="0.0140840198548827 -0.0198729239878282 8.74251500962431E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0507410999571037" />
+      <inertia
+        ixx="8.7245381286706E-06"
+        ixy="2.91404732674265E-07"
+        ixz="4.76442069399781E-09"
+        iyy="1.36174955983004E-05"
+        iyz="4.99976360501757E-10"
+        izz="1.50547493857864E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Four_Motor_Three.STL" />
+      </geometry>
+      <material
+        name="f">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Four_Motor_Three.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_Two_Motor_Four"
+    type="revolute">
+    <origin
+      xyz="-0.042 0.0175 0"
+      rpy="0 0 1.5708" />
+    <parent
+      link="Leg_Four_Joint_Two" />
+    <child
+      link="Leg_Four_Motor_Three" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.2"
+      upper="1.75"
+      effort="1.5"
+      velocity="6" />
+  </joint>
+  <link
+    name="Leg_Four_Foot">
+    <inertial>
+      <origin
+        xyz="7.0112E-05 0.038827 -0.0070265"
+        rpy="0 0 0" />
+      <mass
+        value="0.029454" />
+      <inertia
+        ixx="2.3584E-05"
+        ixy="-6.9798E-22"
+        ixz="4.9634E-08"
+        iyy="6.3964E-06"
+        iyz="8.9608E-06"
+        izz="2.045E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Four_Foot.STL" />
+      </geometry>
+      <material
+        name="g">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Four_Foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor_Three_Foot_Four"
+    type="fixed">
+    <origin
+      xyz="0.0415 -0.021 -0.0125"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="Leg_Four_Motor_Three" />
+    <child
+      link="Leg_Four_Foot" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Leg_Five_Motor_One">
+    <inertial>
+      <origin
+        xyz="0.000584019854882697 0.0171270760121718 8.74251500964512E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0507410999571037" />
+      <inertia
+        ixx="8.72453812867061E-06"
+        ixy="2.91404732674265E-07"
+        ixz="4.76442069399912E-09"
+        iyy="1.36174955983004E-05"
+        iyz="4.99976360499687E-10"
+        izz="1.50547493857864E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Five_Motor_One.STL" />
+      </geometry>
+      <material
+        name="b">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Five_Motor_One.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Body_Motor_Five"
+    type="fixed">
+    <origin
+      xyz="-0.08635 8.6603E-05 -0.035"
+      rpy="1.5708 0 0" />
+    <parent
+      link="Hexapod_Body" />
+    <child
+      link="Leg_Five_Motor_One" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Leg_Five_Joint_One">
+    <inertial>
+      <origin
+        xyz="-0.021 -0.0275 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0389043786122597" />
+      <inertia
+        ixx="7.2206746173433E-06"
+        ixy="-1.18571260472017E-21"
+        ixz="-2.57849577796333E-22"
+        iyy="6.0887392947234E-06"
+        iyz="6.35274710440725E-22"
+        izz="7.2206746173433E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Five_Joint_One.STL" />
+      </geometry>
+      <material
+        name="c">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Five_Joint_One.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor_One_Joint_Five"
+    type="revolute">
+    <origin
+      xyz="-0.0135 0.037 0"
+      rpy="3.1416 0 1.5708" />
+    <parent
+      link="Leg_Five_Motor_One" />
+    <child
+      link="Leg_Five_Joint_One" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.87"
+      upper="0.87"
+      effort="1.5"
+      velocity="6" />
+  </joint>
+  <link
+    name="Leg_Five_Motor_Two">
+    <inertial>
+      <origin
+        xyz="0.0140840198548827 -0.0198729239878282 8.74251500965206E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0507410999571037" />
+      <inertia
+        ixx="8.72453812867059E-06"
+        ixy="2.91404732674268E-07"
+        ixz="4.76442069399922E-09"
+        iyy="1.36174955983004E-05"
+        iyz="4.99976360500544E-10"
+        izz="1.50547493857863E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Five_Motor_Two.STL" />
+      </geometry>
+      <material
+        name="d">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Five_Motor_Two.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_One_Motor_Five"
+    type="revolute">
+    <origin
+      xyz="-0.021 -0.055 -0.021"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="Leg_Five_Joint_One" />
+    <child
+      link="Leg_Five_Motor_Two" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.75"
+      upper="1.75"
+      effort="1.5"
+      velocity="6" />
+  </joint>
+  <link
+    name="Leg_Five_Joint_Two">
+    <inertial>
+      <origin
+        xyz="-0.0252678246613521 0.0038442834766955 -1.38777878078145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0208734115397715" />
+      <inertia
+        ixx="4.66379780614639E-06"
+        ixy="-8.470329472543E-22"
+        ixz="1.35056924056985E-22"
+        iyy="1.08843805914059E-06"
+        iyz="8.44322036937849E-22"
+        izz="3.74567124038541E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Five_Joint_Two.STL" />
+      </geometry>
+      <material
+        name="e">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Five_Joint_Two.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor_Two_Joint_Five"
+    type="fixed">
+    <origin
+      xyz="0.0505 -0.042 0"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="Leg_Five_Motor_Two" />
+    <child
+      link="Leg_Five_Joint_Two" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Leg_Five_Motor_Three">
+    <inertial>
+      <origin
+        xyz="0.0140840198548827 -0.0198729239878282 8.74251500963819E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0507410999571037" />
+      <inertia
+        ixx="8.72453812867061E-06"
+        ixy="2.91404732674265E-07"
+        ixz="4.76442069400309E-09"
+        iyy="1.36174955983004E-05"
+        iyz="4.999763604993E-10"
+        izz="1.50547493857863E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Five_Motor_Three.STL" />
+      </geometry>
+      <material
+        name="f">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Five_Motor_Three.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_Two_Motor_Five"
+    type="revolute">
+    <origin
+      xyz="0 0.0175 0"
+      rpy="3.1416 0 1.5708" />
+    <parent
+      link="Leg_Five_Joint_Two" />
+    <child
+      link="Leg_Five_Motor_Three" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.2"
+      upper="1.75"
+      effort="1.5"
+      velocity="6" />
+  </joint>
+  <link
+    name="Leg_Five_Foot">
+    <inertial>
+      <origin
+        xyz="7.0112E-05 0.038827 -0.0070265"
+        rpy="0 0 0" />
+      <mass
+        value="0.029454" />
+      <inertia
+        ixx="2.3584E-05"
+        ixy="1.6941E-21"
+        ixz="4.9634E-08"
+        iyy="6.3964E-06"
+        iyz="8.9608E-06"
+        izz="2.045E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Five_Foot.STL" />
+      </geometry>
+      <material
+        name="g">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Five_Foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor_Three_Foot_Five"
+    type="fixed">
+    <origin
+      xyz="0.0415 -0.021 -0.0125"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="Leg_Five_Motor_Three" />
+    <child
+      link="Leg_Five_Foot" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Leg_Six_Motor_One">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Six_Motor_One.STL" />
+      </geometry>
+      <material
+        name="b">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Six_Motor_One.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Body_Motor_Six"
+    type="fixed">
+    <origin
+      xyz="-0.0432 0.074825 -0.035"
+      rpy="1.5708 0 -1.0472" />
+    <parent
+      link="Hexapod_Body" />
+    <child
+      link="Leg_Six_Motor_One" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Leg_Six_Joint_One">
+    <inertial>
+      <origin
+        xyz="-0.0209999999999994 -0.0274999999999981 -3.40005801291454E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.0389043786122597" />
+      <inertia
+        ixx="7.2206746173433E-06"
+        ixy="-1.36178818807227E-22"
+        ixz="-4.30968939911705E-22"
+        iyy="6.0887392947234E-06"
+        iyz="0"
+        izz="7.2206746173433E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Six_Joint_One.STL" />
+      </geometry>
+      <material
+        name="c">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Six_Joint_One.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor_One_Joint_Six"
+    type="revolute">
+    <origin
+      xyz="-0.0135 0.037 0"
+      rpy="3.1416 0 1.5708" />
+    <parent
+      link="Leg_Six_Motor_One" />
+    <child
+      link="Leg_Six_Joint_One" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.87"
+      upper="0.87"
+      effort="1.5"
+      velocity="6" />
+  </joint>
+  <link
+    name="Leg_Six_Motor_Two">
+    <inertial>
+      <origin
+        xyz="0.0140840198548827 -0.0198729239878282 8.74251500965206E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0507410999571037" />
+      <inertia
+        ixx="8.72453812867061E-06"
+        ixy="2.91404732674266E-07"
+        ixz="4.764420693999E-09"
+        iyy="1.36174955983004E-05"
+        iyz="4.99976360499839E-10"
+        izz="1.50547493857864E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Six_Motor_Two.STL" />
+      </geometry>
+      <material
+        name="d">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Six_Motor_Two.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_One_Motor_Six"
+    type="revolute">
+    <origin
+      xyz="-0.021 -0.055 -0.021"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="Leg_Six_Joint_One" />
+    <child
+      link="Leg_Six_Motor_Two" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.75"
+      upper="1.75"
+      effort="1.5"
+      velocity="6" />
+  </joint>
+  <link
+    name="Leg_Six_Joint_Two">
+    <inertial>
+      <origin
+        xyz="-0.0252678246613521 0.00384428347669565 -1.52655665885959E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.0208734115397715" />
+      <inertia
+        ixx="4.6637978061464E-06"
+        ixy="-2.27640104574593E-21"
+        ixz="-5.27351914991464E-22"
+        iyy="1.08843805914059E-06"
+        iyz="1.97004812269847E-21"
+        izz="3.74567124038541E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Six_Joint_Two.STL" />
+      </geometry>
+      <material
+        name="e">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Six_Joint_Two.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor_Two_Joint_Six"
+    type="fixed">
+    <origin
+      xyz="0.0505 -0.042 0"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="Leg_Six_Motor_Two" />
+    <child
+      link="Leg_Six_Joint_Two" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Leg_Six_Motor_Three">
+    <inertial>
+      <origin
+        xyz="0.0140840198548827 -0.0198729239878282 8.74251500962431E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0507410999571036" />
+      <inertia
+        ixx="8.7245381286706E-06"
+        ixy="2.9140473267427E-07"
+        ixz="4.76442069400395E-09"
+        iyy="1.36174955983004E-05"
+        iyz="4.99976360499991E-10"
+        izz="1.50547493857863E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Six_Motor_Three.STL" />
+      </geometry>
+      <material
+        name="f">
+        <color
+          rgba="0.501960784313725 0.501960784313725 0.501960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Six_Motor_Three.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint_Two_Motor_Six"
+    type="revolute">
+    <origin
+      xyz="0 0.0175 0"
+      rpy="3.1416 0 1.5708" />
+    <parent
+      link="Leg_Six_Joint_Two" />
+    <child
+      link="Leg_Six_Motor_Three" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.2"
+      upper="1.75"
+      effort="1.5"
+      velocity="6" />
+  </joint>
+  <link
+    name="Leg_Six_Foot">
+    <inertial>
+      <origin
+        xyz="7.0112E-05 0.038827 -0.0070265"
+        rpy="0 0 0" />
+      <mass
+        value="0.029454" />
+      <inertia
+        ixx="2.3584E-05"
+        ixy="1.1011E-20"
+        ixz="4.9634E-08"
+        iyy="6.3964E-06"
+        iyz="8.9608E-06"
+        izz="2.045E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Six_Foot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Hexapod/meshes/Leg_Six_Foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor_Three_Foot_Six"
+    type="fixed">
+    <origin
+      xyz="0.0415 -0.021 -0.0125"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="Leg_Six_Motor_Three" />
+    <child
+      link="Leg_Six_Foot" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<robot name="simpleplane">
+
+    <material name="Light Blue"> 
+        <color rgba="0.7 0.7 1 1"/>
+    </material>
+
+    <link name="base_link">
+        <visual> 
+            <geometry> 
+                <box size="20 20 0.01"/>
+                <origin rpy="0 0 0" xyz="-10 -10 -0.005"/>
+            </geometry>
+            <material name="Light Blue"/>
+        </visual>
+        <collision> 
+             <geometry> 
+                <box size="20 20 0.01"/>
+                <origin rpy="0 0 0" xyz="-10 -10 -0.005"/>
+            </geometry>
+             <surface>
+                <friction>
+                    <ode>
+                        <mu>0.6</mu>
+                        <mu2>0.85</mu2>
+                    </ode>
+                </friction>
+            </surface>
+        </collision> 
+        <inertial> 
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial> 
+        <contact> 
+            <lateral_friction value="0.7"/>
+        </contact>
+    </link>
+     
+</robot>
