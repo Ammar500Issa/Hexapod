@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 def train(env, exp_name, **kwargs):
     for n in range(0, 10):
         log_dir = "tmp/"
+        # This code adapts PPO algorithm to train the model of an MLP neural network
         model = PPO(
             policy = "MlpPolicy",
             env = env,
@@ -22,7 +23,7 @@ def train(env, exp_name, **kwargs):
             log_interval = 1,
             tb_log_name = "PPO",
         )
-        model.save("trained_models/" + exp_name + "_" + str(n))
+        model.save("trained_models/" + exp_name + "_" + str(n)) # Saving the model parameters in the directory
         env.close()
         del env
         env = HexapodBulletEnv(client, time_step = 0.25, frameskip = 60, render = False,  max_velocity = 59*2*math.pi/60, max_torque = 1.50041745)
@@ -45,7 +46,7 @@ if __name__ == "__main__":
     )
     client = p.connect(p.GUI)
     env = HexapodBulletEnv(client, time_step = 1, frameskip = 240, render = False,  max_velocity = 59*2*math.pi/60, max_torque = 1.50041745)
-    model = PPO.load("trained_models/" + "test" + "_" + str(9))
+    model = PPO.load("trained_models/" + "test" + "_" + str(9)) # Loading the trained model to test it after the end of the learning process
     obs = env.reset()
     r = []
     t = []
@@ -60,6 +61,7 @@ if __name__ == "__main__":
         dt += 1
         env.render()
         print(i)
+    # Plotting the reward curve
     plt.plot(t, r)
     plt.axis([0, 10000, -60, 60])
     plt.show()
