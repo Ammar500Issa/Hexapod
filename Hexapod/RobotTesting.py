@@ -17,12 +17,14 @@ for _id in range(number_of_joints):
     _name = p.getJointInfo(HexaPod, _id)[12].decode('UTF-8')
     _link_name_to_index[_name] = _id
     print(_id, ": ", _name)
+# Defining the indices of each leg
 leg1_indices = [1, 2, 4]
 leg2_indices = [7, 8, 10]
 leg3_indices = [13, 14, 16]
 leg4_indices = [19, 20, 22]
 leg5_indices = [25, 26, 28]
 leg6_indices = [31, 32, 34]
+# Manually testing of the Position control of each motor
 angle_1 = p.addUserDebugParameter('Steering1_1', -1.5, 1.5, 0)
 angle_2 = p.addUserDebugParameter('Steering1_2', -1.5, 1.5, 0)
 angle_3 = p.addUserDebugParameter('Steering1_3', -1.5, 1.5, 0)
